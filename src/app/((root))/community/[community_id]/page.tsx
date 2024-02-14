@@ -1,5 +1,5 @@
 import data from "./data.json";
-import Chat from "@/components/chat";
+import Chat from "@/components/student/Chat";
 
 export default function page() {
     const data=[
@@ -42,12 +42,13 @@ export default function page() {
       
 
     console.log(data);
-    console.log("surprise motherfucker")
-  return (
-    <div>
-      {data.map((chat) => (
-        <Chat data={chat}></Chat>
-      ))}
-    </div>
-  );
+    console.log("surprise motherfucker");
+
+    return (
+        <div>
+        {data.map((chat,i) => (
+            <Chat key={i} data={chat}></Chat>
+        ))}
+        </div>
+    );
 }
