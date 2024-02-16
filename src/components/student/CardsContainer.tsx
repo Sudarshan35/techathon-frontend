@@ -5,13 +5,14 @@ import axios from 'axios';
 interface Course {
     id: string;
     title: string;
-}
+};
 
 function CardsContainer({ category }: { category: string }) {
     const [courses, setCourses] = useState<Course[]>([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
+        
         axios.get('https://codehelp-apis.vercel.app/api/get-top-courses')
             .then((res) => {
                 
@@ -31,7 +32,14 @@ function CardsContainer({ category }: { category: string }) {
                 console.log(err);
                 setLoading(false);
             });
+
     }, [category]);
+
+    if(courses.length==0){
+        return <div className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
+            <div className='flex justify-center items-center h-screen w-full text-xl font-medium'>Loading...</div>
+        </div>
+    };
 
     return (
         <div className="cards">

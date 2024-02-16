@@ -1,9 +1,8 @@
 "use client"
-
-import { useRouter } from "next/navigation";
-import { BASE_URL, userDetails } from "../../../../config";
-import { useEffect } from "react";
 import axios from "axios";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
+import { BASE_URL, userDetails } from "../../../../config";
 import Cookies from "js-cookie";
 
 const Page=()=>{
@@ -18,7 +17,9 @@ const Page=()=>{
             try{
                 const token = Cookies.get('token');
                 console.log(token);
-                const res=await axios.get(`${BASE_URL}/myCourses`,{headers:{'Authorization':`Bearer ${token} `}}); 
+                const res=await axios.get(`${BASE_URL}/myCourses`,{
+                    headers:{'Authorization':`Bearer ${token}`}
+                });
 
                 if(res){
                     console.log(res.data);
@@ -28,12 +29,10 @@ const Page=()=>{
                 console.log(error);
             }
         }
-  
+
         fetchCoursesData();
-  
+
     },[]);
-
-
 
     if(!user){
         router.push("/login");
@@ -43,15 +42,16 @@ const Page=()=>{
     }
 
     return(
-        <div className="">
-            <div className="flex  flex-col justify-center items-center w-full h-[80vh]">
+        <div>
+            <div className="flex  flex-col justify-center items-center w-full h-[90vh]">
                 <div className="text-center">
-                    <p className="text-xl">No courses Enrolled yet</p>
-                    <button onClick={()=>router.push("/courses")} className="py-1.5 w-[8rem] bg-yellow-50 mt-4 text-black font-bold rounded-md">View Courses</button>
+                    <p className="text-xl">No courses Added yet</p>
+                    <button onClick={()=>router.push("/tutor/uploadCourse")} className="py-1.5 w-[8rem] bg-yellow-50 mt-4 text-black font-bold rounded-md">Create Courses</button>
                 </div>
-            </div>
+            </div>
         </div>
     );
 }
 
 export default Page;
+

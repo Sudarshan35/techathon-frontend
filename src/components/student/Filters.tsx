@@ -2,9 +2,10 @@ interface data{
     id:string,
     title:string,
     setCategory: (title: string) => void;
+    category:string,
 }
 
-function Filter({title,setCategory}:data){;
+function Filter({title,setCategory,category}:data){;
    function clickHandler(title:any){
     console.log(title);
     setCategory(title);

@@ -5,9 +5,9 @@ const Card=({data}:{data:any})=>{
   const router=useRouter();
 
     return(
-        <div onClick={()=>router.push("/coursePlayer")} className="card cursor-pointer rounded-lg w-[380px] flex flex-col items-center h-[375px] bg-richblack-800">
+        <div onClick={()=>router.push("/coursePlayer/webDev")} className="card cursor-pointer rounded-lg w-[380px] flex flex-col items-center h-[375px] bg-richblack-800">
             <div className="img h-[200px] overflow-hidden w-full">
-              <img className='w-full  hover:scale-110  transition-transform duration-500  h-full object-cover' src={data?.image?.url} alt={data?.image?.alt}/>
+              <img className='w-full hover:scale-110 transition-transform duration-500  h-full object-cover' src={data?.image?.url} alt={data?.image?.alt}/>
             </div>
             <div className="title">
                {data.title}

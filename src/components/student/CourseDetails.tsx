@@ -12,7 +12,7 @@ const CourseDetails=()=>{
                 <li onClick={()=>setActiveSection('2')} className={`border-b-2 ${activeSection==='2' ? "border-yellow-200" : " border-transparent hover:border-yellow-600 "}  cursor-pointer  transition-all duration-300  px-2`}>Timestamps</li>
                 <li onClick={()=>setActiveSection('3')} className={`border-b-2 ${activeSection==='3' ? "border-yellow-200" : " border-transparent hover:border-yellow-600 "}  cursor-pointer  transition-all duration-300 px-2`}>Live Notes</li>
                 <li onClick={()=>setActiveSection('4')} className={`border-b-2  ${activeSection==='4' ? "border-yellow-200" : " border-transparent hover:border-yellow-600"}  cursor-pointer  transition-all duration-300  px-2`}>Summarize video [AI]</li>
-                <li onClick={()=>setActiveSection('5')} className={`border-b-2 ${activeSection==='5' ? "border-yellow-200" : " border-transparent hover:border-yellow-600"}  cursor-pointer   transition-all duration-300  px-2`}>Announcements</li>
+                <li onClick={()=>setActiveSection('5')} className={`border-b-2 ${activeSection==='5' ? "border-yellow-200" : " border-transparent hover:border-yellow-600"}  cursor-pointer   transition-all duration-300  px-2`}>Translate</li>
             </ul>
             <hr className="absolute border-richblack-500 top-11 w-[98%] left-1/2 transform -translate-x-1/2 "></hr>
             {activeSection=="1" && 
