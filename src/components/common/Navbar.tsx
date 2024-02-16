@@ -40,7 +40,7 @@ const Navbar=()=>{
           <ul className="flex gap-6 text-lg">
             <li  onClick={()=>router.push("/")} className={`${pathName=="/" ? "text-yellow-200 hover:text-yellow-200" : "hover:text-yellow-500"} cursor-pointer transition-all duration-300`}>Home</li>
             <li  onClick={()=>router.push("/tutor")} className={`${pathName=="/myCourses" ? "text-yellow-200 hover:text-yellow-200" : "hover:text-yellow-500"} cursor-pointer transition-all duration-300`}>My Courses</li>
-            <li  onClick={()=>router.push("/myCommunities")} className={`${pathName=="/tutor/community" ? "text-yellow-200 hover:text-yellow-200" : "hover:text-yellow-500"} cursor-pointer transition-all duration-300`}>My Communities</li>
+            <li  onClick={()=>router.push("/community")} className={`${pathName=="/tutor/community" ? "text-yellow-200 hover:text-yellow-200" : "hover:text-yellow-500"} cursor-pointer transition-all duration-300`}>My Communities</li>
             <li  onClick={()=>router.push("/courses")} className={`${pathName=="/contact" ? "text-yellow-200 hover:text-yellow-200" : "hover:text-yellow-500"} cursor-pointer transition-all duration-300`}>Courses</li>
           </ul>
           }
