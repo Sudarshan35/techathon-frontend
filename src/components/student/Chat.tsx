@@ -10,7 +10,7 @@ export default function Chat({data}:{data:any}) {
     
     return (
         <div className='mx-4 mt-4'>
-            <div className={`div h-auto w-auto rounded-full bg-richblack-800 flex flex-col   max-w-[30rem] px-4 py-2 ${data.username === "Alice" ? 'justify-self-end' : ''}`}>
+            <div className={`div h-auto w-auto rounded-full bg-richblack-800 flex flex-col max-w-[30rem] px-4 py-2 ${data.username === "Alice" ? 'justify-self-end' : ''}`}>
                 <p className='text-xs text-yellow-100 pl-2'>{data.username}</p>
                 <p className='text-white text-sm pl-6'>{data.chat}</p>
                 <p className='text-xs text-end pr-3'>{formattedTime}</p>

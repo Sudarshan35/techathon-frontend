@@ -11,7 +11,7 @@ import { IoVolumeMuteSharp } from "react-icons/io5";
 import { RiFullscreenExitFill } from "react-icons/ri";
 import screenfull from "screenfull";
 
-const VideoPlayer=()=>{
+const VideoPlayer=({selectedModule,selectedModuleIndex}:{selectedModule:any,selectedModuleIndex:any})=>{
 
     const [playVideo,setPlayVideo]=useState<boolean>(false);
     const [qualityPopUp,setQualityPopUp]=useState<boolean>(false);
@@ -101,9 +101,9 @@ const VideoPlayer=()=>{
  
     return(
         <div ref={playerContainerRef as React.RefObject<HTMLDivElement>} className="w-full h-[535px] relative flex justify-center overflow-hidden rounded-md shadow-md border-2 border-blue-600 shadow-blue-600  ">
-            <ReactPlayer ref={videoPlayerRef} playbackRate={playbackRate} height="100%" width="100%" muted={isMute} playing={playVideo} url={'https://res.cloudinary.com/dkaqcqy2j/video/upload/v1707844712/edtech/hzw7ievzmcv5cvwjc8ws.mp4'}/>
+            <ReactPlayer ref={videoPlayerRef} playbackRate={playbackRate} height="100%" width="100%" muted={isMute} playing={playVideo} url={selectedModule?.url}/>
             <div className={`absolute inset-0 flex flex-col justify-between p-4 bg-black bg-opacity-60 z-10 ${!playVideo ? "opacity-100" : "opacity-0"}  transition-opacity duration-700 hover:opacity-100`}>
-                <h1 className="text-2xl mt-0 ml-4 ">Ep-01 | What will you get in this course</h1>
+                <h1 className="text-2xl mt-0 ml-4 ">Lecture No. {selectedModuleIndex} : {selectedModule?.title}</h1>
                 <div className="flex justify-center gap-10">
                     {!playVideo &&
                     <div onClick={()=>setPlayVideo(!playVideo)} className="bg-white flex justify-center items-center hover:bg-richblack-50 transition-all duration-300 p-[23px] rounded-full cursor-pointer">

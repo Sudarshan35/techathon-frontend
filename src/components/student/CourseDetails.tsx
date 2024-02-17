@@ -1,7 +1,7 @@
 "use client"
 import { useState } from "react";
 
-const CourseDetails=()=>{
+const CourseDetails=({data}:{data:any})=>{
 
     const [activeSection,setActiveSection]=useState<string>('1');
 
@@ -25,12 +25,7 @@ const CourseDetails=()=>{
                     </div>
                     <div className="flex flex-col gap-2 ">
                         <p className="font-medium text-[16.5px]">Description</p>
-                        <div className="text-richblack-300">
-                            Welcome to the Complete Web Development Bootcamp, the only course you need to learn to code and become a full-stack web developer. With 150,000+ ratings and a 4.8 average, my Web Development course is one of the HIGHEST RATED courses in the history of Udemy!
-                            At 62+ hours, this Web Development course is without a doubt the most comprehensive web development course available online. Even if you have zero programming experience, this course will take you from beginner to mastery. Here why:
-                            The course is taught by the lead instructor at the App Brewery, London leading in-person programming bootcamp.
-                            The course has been updated to be 2024 ready its and you be learning the latest tools and technologies used at large comp.
-                        </div>
+                        <div className="text-richblack-300">{data?.description}</div>
                     </div>
                 </div>
             }

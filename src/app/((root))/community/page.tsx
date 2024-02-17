@@ -12,7 +12,7 @@ export default function Page() {
   const [communities, setCommunities] = useState<any>([]);
 
   useEffect(() => {
-    const fetchCommunity = async (): Promise<void> => {
+    const fetchCommunity = async (): Promise<void>=> {
 
         const token = Cookies.get('token');
         console.log(token);

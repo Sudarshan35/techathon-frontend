@@ -1,4 +1,4 @@
-export const BASE_URL="http://192.168.174.195:3030";
+export const BASE_URL="http://172.16.104.158:3030";
 
 let userDetails:any;
 
